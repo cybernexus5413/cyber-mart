@@ -1,0 +1,6 @@
+{
+  "name": "MINI MART 24",
+  "description": "Pixar-style 24/7 Smart Vending Kiosk PWA with Malaysian QR payments, Admin & SuperAdmin fleet dashboards, and Android serial bridge.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

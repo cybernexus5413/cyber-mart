@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Fredoka', system-ui, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #04071E;
+    color: #F8FAFC;
+    overscroll-behavior-y: contain;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Deep Space Midnight Cyberpunk Backdrop Matching Mockup */
+.cyber-bg {
+  background:
+    radial-gradient(ellipse 65% 32% at 22% 8%, rgba(0, 229, 255, 0.24) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 34% at 84% 12%, rgba(255, 31, 184, 0.22) 0%, transparent 65%),
+    radial-gradient(ellipse 80% 35% at 50% 95%, rgba(0, 140, 255, 0.24) 0%, transparent 70%),
+    linear-gradient(180deg, #04071F 0%, #091345 48%, #040824 100%);
+}
+
+.cyber-grid-overlay {
+  background-image:
+    linear-gradient(to right, rgba(0, 229, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(168, 85, 247, 0.08) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Chamfered Polygon Clips */
+.chamfer-hex {
+  -webkit-clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0 50%);
+  clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0 50%);
+}
+
+.chamfer-card {
+  -webkit-clip-path: polygon(18px 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px), 0 18px);
+  clip-path: polygon(18px 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px), 0 18px);
+}
+
+.chamfer-card-sm {
+  -webkit-clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px);
+  clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px);
+}
+
+/* Neon Cabinet Frame */
+.cyber-cabinet {
+  background: linear-gradient(180deg, rgba(6, 13, 46, 0.88) 0%, rgba(5, 11, 38, 0.92) 100%);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 0 2px rgba(0, 229, 255, 0.92),
+    0 0 28px rgba(0, 229, 255, 0.42),
+    inset 0 0 24px rgba(0, 229, 255, 0.14);
+}
+
+/* Individual Slot Pod Matching Mockup Cyan Outlines */
+.cyber-slot-card {
+  background: linear-gradient(180deg, rgba(9, 20, 62, 0.92) 0%, rgba(5, 12, 42, 0.96) 100%);
+  border: 1.5px solid rgba(0, 229, 255, 0.82);
+  box-shadow:
+    0 0 10px rgba(0, 229, 255, 0.24),
+    inset 0 0 14px rgba(0, 229, 255, 0.16);
+}
+
+.cyber-slot-interactive {
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1), border-color 140ms ease;
+}
+
+.cyber-slot-interactive:hover:not(:disabled) {
+  border-color: #67F5FF;
+  box-shadow:
+    0 0 18px rgba(0, 229, 255, 0.55),
+    inset 0 0 16px rgba(0, 229, 255, 0.28);
+}
+
+.cyber-slot-interactive:active:not(:disabled) {
+  transform: translateY(1px) scale(0.96);
+}
+
+/* Glowing Cyber-Glass Panel for Modals & Dashboards */
+.cyber-glass-panel {
+  background: linear-gradient(180deg, rgba(10, 18, 58, 0.94) 0%, rgba(6, 11, 38, 0.97) 100%);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(0, 229, 255, 0.45);
+  box-shadow:
+    0 14px 32px -10px rgba(0, 0, 0, 0.7),
+    0 0 24px rgba(0, 229, 255, 0.18);
+}
+
+/* Neon Text Glow Helpers */
+.cyber-logo-glow {
+  text-shadow:
+    0 0 12px rgba(0, 229, 255, 0.85),
+    0 0 26px rgba(255, 31, 184, 0.65),
+    0 3px 0 rgba(4, 7, 30, 0.9);
+}
+
+/* Neon Buttons */
+.cyber-btn-pink {
+  background: linear-gradient(90deg, #C8147E 0%, #FF1FA6 50%, #D91688 100%);
+  box-shadow:
+    0 0 20px rgba(255, 31, 166, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-btn-pink:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.cyber-btn-mint {
+  background: linear-gradient(180deg, #34F5B5 0%, #05C987 100%);
+  box-shadow:
+    0 0 20px rgba(5, 201, 135, 0.5),
+    0 4px 0 0 #047857,
+    inset 0 2px 0 rgba(255, 255, 255, 0.5);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-btn-mint:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow:
+    0 0 12px rgba(5, 201, 135, 0.4),
+    0 1px 0 0 #047857;
+}
+
+.cyber-btn-cyan {
+  background: linear-gradient(180deg, #38F2FF 0%, #00B8E6 100%);
+  box-shadow:
+    0 0 20px rgba(0, 229, 255, 0.5),
+    0 4px 0 0 #0369A1,
+    inset 0 2px 0 rgba(255, 255, 255, 0.55);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-btn-cyan:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow:
+    0 0 12px rgba(0, 229, 255, 0.4),
+    0 1px 0 0 #0369A1;
+}
+
+.pb-safe {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+.pt-safe {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 255, 0.55);
+  border-radius: 9999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
