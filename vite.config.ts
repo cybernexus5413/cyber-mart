@@ -2,13 +2,13 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
-import {VitePWA} from 'vite-plugin-pwa';
-
+import {VitePWA} from 'vite-plugin-pwa'; 
+import legacy from '@vitejs/plugin-legacy';
 export default defineConfig(() => {
-  return {
+  return { base: './',
     plugins: [
       react(),
-      tailwindcss(),
+      tailwindcss(), legacy({ targets: ['chrome >= 44', 'android >= 5'] }),
       VitePWA({
         registerType: 'autoUpdate',
         includeAssets: ['icon.svg', 'apple-touch-icon.png', 'pwa-192x192.png', 'pwa-512x512.png', 'pwa-maskable-512x512.png'],
